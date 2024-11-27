@@ -1,0 +1,30 @@
+.table-container {
+  max-width: 100%; /* Ensures the table doesn't exceed the container width */
+  overflow-x: auto; /* Adds horizontal scrolling for large tables */
+  margin: 20px 0; /* Adds space around the table */
+}
+
+.styled-table {
+  width: 100%; /* Makes the table take full width of the container */
+  border-collapse: collapse; /* Removes default spacing between cells */
+  font-size: 16px; /* Sets font size for table content */
+  text-align: left; /* Aligns text to the left */
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px 15px; /* Adds padding inside table cells */
+  border: 1px solid #ddd; /* Adds a border around each cell */
+}
+
+.styled-table th {
+  background-color: lightgrey; /* Light gray background for table headers */
+  font-weight: bold; /* Makes headers bold */
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: whitesmoke; /* Alternating row colors */
+}
+
+.styled-table tr:hover {
+  background-color: lightblue; /* Highlight row on hover */
+}

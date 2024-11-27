@@ -1,0 +1,52 @@
+<h1>Articles</h1>
+<h5>Hello guys </h5>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Article", new_article_path %>
+
+
+<div class="table-container">  
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Image</th>
+      <th>Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.body%></td>
+        <td>
+          <% if article.image.attached? %>
+            <%= image_tag article.image, alt: "Article Thumbnail", style: "max-width: 300px; height: auto;" %>
+          <% else %>
+            <p>No Image</p>
+          <% end %>
+        </td>
+    <td>
+          <%= link_to 'Show', article_path(article) %> 
+          <%= link_to 'Edit', edit_article_path(article) %> 
+          <%= link_to 'Destroy', article_path(article), class: "btn btn-danger", data:
+          {                           
+                     turbo_method: :delete,
+                     turbo_confirm: "Are you sure?"
+                   } %>
+                 
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
