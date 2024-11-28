@@ -16,7 +16,6 @@
   </div>
 
 
-  <div>
     <%= form.label :image, "Choose an image" %><br>
     <%= form.file_field :image, accept: 'image/*', class: 'custom-file-input' %>
     <% article.errors.full_messages_for(:image).each do |message| %>

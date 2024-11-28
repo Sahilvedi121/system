@@ -30,7 +30,7 @@
         <td><%= article.body%></td>
         <td>
           <% if article.image.attached? %>
-            <%= image_tag article.image, alt: "Article Thumbnail", style: "max-width: 300px; height: auto;" %>
+            <%= image_tag article.image, alt: "Article Thumbnail", style: "max-width: 30px; height: auto;" %>
           <% else %>
             <p>No Image</p>
           <% end %>

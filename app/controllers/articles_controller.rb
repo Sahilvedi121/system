@@ -15,9 +15,9 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to @article
+      redirect_to @article, notice: 'Atticle was succesfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
@@ -42,13 +42,13 @@ class ArticlesController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
-private
-    def article_params
-      params.expect(:article [:title, :body])
-    end
+# private
+#     def article_params
+#       params.expect(:article [:title, :body])
+#     end
 
   private
     def article_params
-      params.expect(:article).permit(:title, :body,:image)
+      params.require(:article).permit(:title, :body, :image)
     end
 end
